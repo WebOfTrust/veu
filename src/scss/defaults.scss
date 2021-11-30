@@ -64,6 +64,7 @@ body {
 // }
 
 // images can't be wider than their containers
+
 img,
 video,
 iframe {
@@ -71,18 +72,20 @@ iframe {
 }
 
 // tables inherit font size (some browsers set a default table font size)
+
 table {
   font-size: inherit;
 }
 
 // set cursor to pointer for specific elements
 
-// a {
-//   cursor: pointer;
-//   outline: none;
-// }
+a {
+  cursor: pointer;
+  outline: none;
+}
 
 // Container
+
 .container {
   margin: 0 auto;
   max-width: 90rem;
@@ -91,6 +94,7 @@ table {
 }
 
 // Spinner
+
 // .spinner::before {
 //   animation: spin 2s linear infinite;
 //   border: 6px solid $gray-lt;

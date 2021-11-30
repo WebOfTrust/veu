@@ -42,7 +42,8 @@ a:link {
 .button {
   @include button($blue, white, darken($blue, 10%));
 
-  //used for "text" buttons
+  // used for "text" buttons
+
   &--light {
     @include button(white, $blue, $gray-lt);
   }
@@ -113,11 +114,13 @@ a:link {
 
 // To get a consistent space at the top of each page, which requires adding this class to a div,
 // h1, or other element on every page, but which allows the flexibity to have a fixed nav
+
 .headspace {
   margin-top: 5rem;
 }
 
 // used for login, sign-up, and similar forms
+
 .centerPage {
   margin: 5rem auto 0;
   max-width: 320px;
@@ -153,6 +156,7 @@ a:link {
 }
 
 // Used on the LearnMore view
+
 .footer {
   background-color: $gray-dker;
   color: white;

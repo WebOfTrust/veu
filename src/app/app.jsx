@@ -3,9 +3,9 @@ import m from 'mithril';
 import { Nav, ToastOutlet } from './components';
 import { Error, Home, StyleGuide } from './views';
 
-import '~/scss/defaults.scss';
-import '~/scss/typography.scss';
-// import '~/scss/globals.scss';
+import '../scss/defaults.scss';
+import '../scss/typography.scss';
+// import '../scss/globals.scss';
 import 'polythene-css';
 
 let root = document.body;
