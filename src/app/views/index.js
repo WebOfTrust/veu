@@ -6,7 +6,6 @@ import TutorialRequestCredentials from './tutorial/request-credentials/request-c
 
 // Other
 import Error from './error/error.jsx';
-import Home from './home/home.jsx';
 import StyleGuide from './style-guide/style-guide.jsx';
 
 module.exports = {
@@ -18,6 +17,5 @@ module.exports = {
 
   // Other
   Error,
-  Home,
   StyleGuide,
 };

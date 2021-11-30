@@ -21,14 +21,14 @@ class Nav {
               </m.route.Link>
             </h2>
             <div class="nav__spacer"></div>
-            <Button
+            {/*<Button
               label="Start now"
               events={{
                 onclick: () => {
                   m.route.set('/start-now');
                 },
               }}
-            />
+            />*/}
           </div>
         </Container>
       </div>

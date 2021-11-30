@@ -21,97 +21,6 @@ a:link {
   margin: 1rem 0;
 }
 
-@mixin button($background, $color, $activebg) {
-  @include sans;
-  @include bold;
-  background-color: $background;
-  border: none;
-  color: $color;
-  font-size: 16px;
-  height: 3rem;
-  min-width: 100px;
-  padding: 0 1.5rem;
-  transition: all 0.4s;
-
-  &:hover,
-  &:active {
-    background-color: $activebg;
-  }
-}
-
-.button {
-  @include button($blue, white, darken($blue, 10%));
-
-  // used for "text" buttons
-
-  &--light {
-    @include button(white, $blue, $gray-lt);
-  }
-
-  &--fullWidth {
-    width: 100%;
-  }
-}
-
-@mixin button-hollow($color, $hover-text) {
-  @include sans;
-  @include bold;
-  background-color: transparent;
-  border: 1px solid $color;
-  color: $color;
-  font-size: 16px;
-  height: 3rem;
-  min-width: 100px;
-  padding: 0 1.5rem;
-  transition: all 0.4s;
-
-  &:hover,
-  &:active {
-    background-color: $color;
-    color: $hover-text;
-  }
-}
-
-.button-hollow {
-  @include button-hollow($blue, white);
-}
-
-.iconButton {
-  background: transparent;
-  border: none;
-  color: $blue;
-  height: 3rem;
-  transition: color 0.4s;
-  width: 3rem;
-
-  &:hover,
-  &:active {
-    background-color: $gray-lt;
-    color: darken($blue, 10%);
-  }
-}
-
-.input {
-  background-color: white;
-  border: 1px solid $border;
-  font-size: 16px;
-  height: 3rem;
-  margin-bottom: 2rem;
-  padding: 0 1rem;
-
-  &--noBottom {
-    margin-bottom: 0;
-  }
-
-  &--fullWidth {
-    width: 100%;
-  }
-
-  &--error {
-    border: 2px solid $red;
-  }
-}
-
 // To get a consistent space at the top of each page, which requires adding this class to a div,
 // h1, or other element on every page, but which allows the flexibity to have a fixed nav
 
@@ -119,79 +28,93 @@ a:link {
   margin-top: 5rem;
 }
 
-// used for login, sign-up, and similar forms
-
-.centerPage {
-  margin: 5rem auto 0;
-  max-width: 320px;
-
-  &__title {
-    margin-bottom: 0;
-    text-align: center;
-  }
-
-  &__instructions {
-    margin: 2rem 0 0;
-  }
-
-  &__input {
-    margin: 2rem 0 0;
-    width: 100%;
-  }
-
-  &__button {
-    margin-top: 2rem;
-    width: 100%;
-  }
-
-  &__link {
-    display: block;
-    margin-top: 4rem;
-    text-align: center;
-  }
-
-  &__p {
-    margin-top: 6rem;
-  }
-}
-
-// Used on the LearnMore view
-
-.footer {
-  background-color: $gray-dker;
-  color: white;
-  padding: 1.5rem 0;
-
-  &__content {
-    align-items: center;
-    display: flex;
-  }
-
-  &__title {
-    margin: 0;
-  }
-
-  &__spacer {
-    flex: 1;
-  }
-
-  &__links {
-    a,
-    a:visited,
-    a:link {
-      color: white;
-      font-size: 14px;
-      text-decoration: none;
-
-      &:hover,
-      &:active {
-        color: white;
-        text-decoration: underline;
-      }
-
-      &:not(:last-of-type) {
-        margin-right: 1rem;
-      }
-    }
-  }
-}
+// @mixin button($background, $color, $activebg) {
+//   @include sans;
+//   @include bold;
+//   background-color: $background;
+//   border: none;
+//   color: $color;
+//   font-size: 16px;
+//   height: 3rem;
+//   min-width: 100px;
+//   padding: 0 1.5rem;
+//   transition: all 0.4s;
+//
+//   &:hover,
+//   &:active {
+//     background-color: $activebg;
+//   }
+// }
+//
+// .button {
+//   @include button($blue, white, darken($blue, 10%));
+//
+//   // used for "text" buttons
+//
+//   &--light {
+//     @include button(white, $blue, $gray-lt);
+//   }
+//
+//   &--fullWidth {
+//     width: 100%;
+//   }
+// }
+//
+// @mixin button-hollow($color, $hover-text) {
+//   @include sans;
+//   @include bold;
+//   background-color: transparent;
+//   border: 1px solid $color;
+//   color: $color;
+//   font-size: 16px;
+//   height: 3rem;
+//   min-width: 100px;
+//   padding: 0 1.5rem;
+//   transition: all 0.4s;
+//
+//   &:hover,
+//   &:active {
+//     background-color: $color;
+//     color: $hover-text;
+//   }
+// }
+//
+// .button-hollow {
+//   @include button-hollow($blue, white);
+// }
+//
+// .iconButton {
+//   background: transparent;
+//   border: none;
+//   color: $blue;
+//   height: 3rem;
+//   transition: color 0.4s;
+//   width: 3rem;
+//
+//   &:hover,
+//   &:active {
+//     background-color: $gray-lt;
+//     color: darken($blue, 10%);
+//   }
+// }
+//
+// .input {
+//   background-color: white;
+//   border: 1px solid $border;
+//   font-size: 16px;
+//   height: 3rem;
+//   margin-bottom: 2rem;
+//   padding: 0 1rem;
+//
+//   &--noBottom {
+//     margin-bottom: 0;
+//   }
+//
+//   &--fullWidth {
+//     width: 100%;
+//   }
+//
+//   &--error {
+//     border: 2px solid $red;
+//   }
+// }
