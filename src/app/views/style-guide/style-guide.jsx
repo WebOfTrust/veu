@@ -125,7 +125,7 @@ class StyleGuide {
           <h3>Links</h3>
           <ul>
             <li>
-              <m.route.Link href="/">Home</m.route.Link>
+              <m.route.Link href="/tutorial">Tutorial</m.route.Link>
             </li>
             <li>
               <m.route.Link href="/error">Error</m.route.Link>

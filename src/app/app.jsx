@@ -1,7 +1,7 @@
 import m from 'mithril';
 
 import { Nav, ToastOutlet } from './components';
-import { Error, StyleGuide, Tutorial } from './views';
+import { ConfigureIdentifier, CreatePasscode, EnterPasscode, Error, StyleGuide, Tutorial } from './views';
 import './button-styles.jsx';
 
 import 'polythene-css';
@@ -26,19 +26,7 @@ const MainLayout = {
 const documentTitle = 'vLEI Ecosystem';
 m.route.prefix = '';
 m.route(root, '/tutorial/', {
-  '/tutorial/add-contacts/': {
-    oninit: () => {
-      document.title = documentTitle + ' | Tutorial';
-    },
-    view: () => {
-      return (
-        <MainLayout>
-          <TutorialAddContacts />
-        </MainLayout>
-      );
-    },
-  },
-  '/tutorial/': {
+  '/tutorial': {
     oninit: () => {
       document.title = documentTitle + ' | Tutorial';
     },
@@ -46,6 +34,42 @@ m.route(root, '/tutorial/', {
       return (
         <MainLayout>
           <Tutorial />
+        </MainLayout>
+      );
+    },
+  },
+  '/auth/create-passcode': {
+    oninit: () => {
+      document.title = documentTitle + ' | Create Passcode';
+    },
+    view: () => {
+      return (
+        <MainLayout>
+          <CreatePasscode />
+        </MainLayout>
+      );
+    },
+  },
+  '/auth/enter-passcode': {
+    oninit: () => {
+      document.title = documentTitle + ' | Enter Passcode';
+    },
+    view: () => {
+      return (
+        <MainLayout>
+          <EnterPasscode />
+        </MainLayout>
+      );
+    },
+  },
+  '/auth/configure-identifier': {
+    oninit: () => {
+      document.title = documentTitle + ' | Configure Identifier';
+    },
+    view: () => {
+      return (
+        <MainLayout>
+          <ConfigureIdentifier />
         </MainLayout>
       );
     },

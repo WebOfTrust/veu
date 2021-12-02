@@ -71,7 +71,16 @@ class Tutorial {
                   }}
                   style={{ marginBottom: '1rem' }}
                 ></Steps>
-                <Button raised className="button__blue" label="Get Started" />
+                <Button
+                  raised
+                  className="button__blue"
+                  label="Get Started"
+                  events={{
+                    onclick: () => {
+                      m.route.set('/auth/create-passcode');
+                    },
+                  }}
+                />
               </div>
               <div class="tutorial__image__container">
                 <img class="tutorial__image" src={this.stepSelected.image} />
