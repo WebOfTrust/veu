@@ -19,7 +19,16 @@ class CreatePasscode {
               Deposit Box) and entering it into the box below.
             </p>
             <TextField placeholder="xxxxx-xxxx-xxxxx-xxxx-xxxx" />
-            <Button raised className="button__blue" label="Continue" />
+            <Button
+              raised
+              className="button__blue"
+              label="Continue"
+              events={{
+                onclick: () => {
+                  m.route.set('/auth/configure-identifier');
+                },
+              }}
+            />
           </div>
         </Container>
       </>
