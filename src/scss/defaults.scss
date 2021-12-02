@@ -92,27 +92,3 @@ a {
   padding: 0 1rem;
   width: 100%;
 }
-
-// Spinner
-
-// .spinner::before {
-//   animation: spin 2s linear infinite;
-//   border: 6px solid $gray-lt;
-//   border-bottom-color: $blue;
-//   border-radius: 50%;
-//   border-top-color: $blue;
-//   content: '';
-//   display: inline-block;
-//   height: 36px;
-//   width: 36px;
-// }
-//
-// @keyframes spin {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }

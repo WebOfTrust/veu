@@ -1,6 +1,7 @@
 import { Button } from 'polythene-mithril';
 import { Container } from '../../components';
 import Steps from './steps.jsx';
+import './tutorial.scss';
 
 import m from 'mithril';
 
@@ -50,17 +51,17 @@ class Tutorial {
       <>
         <Container>
           <div class="headspace">
-            <h1>Welcome to the vLEI Ecosystem</h1>
-            <p>
+            <h1 class="text--center">Welcome to the vLEI Ecosystem</h1>
+            <p class="text--center font-color--light">
               Getting started is easy, after the sign-up process, you can add and verify connections, request your own
               credentials and store contact information for later use.
             </p>
           </div>
           {this.stepSelected && (
-            <div class="headspace">
-              <div>
-                <h1>{this.stepSelected.header}</h1>
-                <h3>{this.stepSelected.subheader}</h3>
+            <div class="headspace tutorial">
+              <div class="tutorial__info">
+                <h1 class="tutorial__header">{this.stepSelected.header}</h1>
+                <h3 class="tutorial__subheader font-color--light">{this.stepSelected.subheader}</h3>
                 <Steps
                   count={this.steps.length}
                   selected={this.stepSelectedIdx}
@@ -68,11 +69,12 @@ class Tutorial {
                     this.stepSelectedIdx = idx;
                     this.stepSelected = this.steps[this.stepSelectedIdx];
                   }}
+                  style={{ marginBottom: '1rem' }}
                 ></Steps>
                 <Button raised className="button__blue" label="Get Started" />
               </div>
-              <div>
-                <img src={this.stepSelected.image} />
+              <div class="tutorial__image__container">
+                <img class="tutorial__image" src={this.stepSelected.image} />
               </div>
             </div>
           )}

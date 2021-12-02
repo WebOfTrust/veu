@@ -1,0 +1,36 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.tutorial {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+
+  &__info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 1rem;
+    max-width: 348px;
+    min-width: 288px;
+  }
+
+  &__image {
+    &__container {
+      max-height: 440px;
+      max-width: 540px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tutorial {
+    flex-direction: column;
+
+    &__info {
+      margin-right: 0;
+      margin-bottom: 5rem;
+    }
+  }
+}

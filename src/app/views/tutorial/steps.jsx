@@ -1,4 +1,5 @@
 import m from 'mithril';
+import './steps.scss';
 
 class Steps {
   constructor() {}
@@ -6,7 +7,7 @@ class Steps {
   view(vnode) {
     return (
       <>
-        <div class="steps">
+        <div class="steps" style={vnode.attrs.style}>
           {[...Array(vnode.attrs.count)].map((s, idx) => {
             return (
               <div
