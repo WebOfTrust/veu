@@ -1,10 +1,59 @@
 import m from 'mithril';
-import { Button, TextField } from 'polythene-mithril';
+import { Button, Dialog, IconButton, TextField, Toolbar, ToolbarTitle } from 'polythene-mithril';
 import { Container } from '../../../components';
 import './create-passcode.scss';
 
+const iconCloseSVG =
+  '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>';
+
 class CreatePasscode {
-  constructor() {}
+  constructor() {
+    this.savePassModalOptions = {
+      backdrop: true,
+      header: (
+        <Toolbar border>
+          <ToolbarTitle>Wait! Did you save your passcode?</ToolbarTitle>
+          <IconButton
+            icon={{ svg: { content: m.trust(iconCloseSVG) } }}
+            events={{
+              onclick: () => {
+                Dialog.hide();
+              },
+            }}
+          />
+        </Toolbar>
+      ),
+      body: (
+        <div class="flex">
+          <img style={{ marginRight: '1rem' }} src="https://via.placeholder.com/172x208" />
+          <h3 class="font-color--light">
+            If you forget your passcode, you lose access to your wallet. Make sure that you store it someplace safe.
+          </h3>
+        </div>
+      ),
+      footerButtons: (
+        <>
+          <Button
+            label="Cancel"
+            events={{
+              onclick: () => {
+                Dialog.hide();
+              },
+            }}
+          />
+          <Button
+            label="I Saved My Passcode"
+            events={{
+              onclick: () => {
+                m.route.set('/auth/enter-passcode');
+                Dialog.hide();
+              },
+            }}
+          />
+        </>
+      ),
+    };
+  }
 
   view() {
     return (
@@ -38,13 +87,14 @@ class CreatePasscode {
                 label="Continue"
                 events={{
                   onclick: () => {
-                    m.route.set('/auth/enter-passcode');
+                    Dialog.show(this.savePassModalOptions);
                   },
                 }}
               />
             </div>
           </div>
         </Container>
+        <Dialog />
       </>
     );
   }
