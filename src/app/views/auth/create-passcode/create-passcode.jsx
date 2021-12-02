@@ -25,7 +25,16 @@ class CreatePasscode {
             <Button label="Use 1Password" />
             <Button label="Use Last Pass" />
             <br />
-            <Button raised className="button__blue" label="Continue" />
+            <Button
+              raised
+              className="button__blue"
+              label="Continue"
+              events={{
+                onclick: () => {
+                  m.route.set('/auth/enter-passcode');
+                },
+              }}
+            />
           </div>
         </Container>
       </>

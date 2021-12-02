@@ -18,7 +18,16 @@ class ConfigureIdentifier {
             <TextField placeholder="Jane Smith - QVI Corp." />
             <label>Witnesses</label>
             <TextField placeholder="GLEIF Witness Network" />
-            <Button raised className="button__blue" label="Continue" />
+            <Button
+              raised
+              className="button__blue"
+              label="Continue"
+              events={{
+                onclick: () => {
+                  m.route.set('/');
+                },
+              }}
+            />
           </div>
         </Container>
       </>
