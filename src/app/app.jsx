@@ -1,19 +1,13 @@
 import m from 'mithril';
 
 import { Nav, ToastOutlet } from './components';
-import {
-  Error,
-  StyleGuide,
-  TutorialAddContacts,
-  TutorialCompleteSignIn,
-  TutorialCreatePassword,
-  TutorialRequestCredentials,
-} from './views';
+import { Error, StyleGuide, Tutorial } from './views';
+import './button-styles.jsx';
 
+import 'polythene-css';
 import '../scss/defaults.scss';
 import '../scss/typography.scss';
 import '../scss/globals.scss';
-import 'polythene-css';
 
 let root = document.body;
 
@@ -31,7 +25,7 @@ const MainLayout = {
 
 const documentTitle = 'vLEI Ecosystem';
 m.route.prefix = '';
-m.route(root, '/tutorial/create-password/', {
+m.route(root, '/tutorial/', {
   '/tutorial/add-contacts/': {
     oninit: () => {
       document.title = documentTitle + ' | Tutorial';
@@ -44,38 +38,14 @@ m.route(root, '/tutorial/create-password/', {
       );
     },
   },
-  '/tutorial/complete-signin/': {
+  '/tutorial/': {
     oninit: () => {
       document.title = documentTitle + ' | Tutorial';
     },
     view: () => {
       return (
         <MainLayout>
-          <TutorialCompleteSignIn />
-        </MainLayout>
-      );
-    },
-  },
-  '/tutorial/create-password/': {
-    oninit: () => {
-      document.title = documentTitle + ' | Tutorial';
-    },
-    view: () => {
-      return (
-        <MainLayout>
-          <TutorialCreatePassword />
-        </MainLayout>
-      );
-    },
-  },
-  '/tutorial/request-credentials/': {
-    oninit: () => {
-      document.title = documentTitle + ' | Tutorial';
-    },
-    view: () => {
-      return (
-        <MainLayout>
-          <TutorialRequestCredentials />
+          <Tutorial />
         </MainLayout>
       );
     },

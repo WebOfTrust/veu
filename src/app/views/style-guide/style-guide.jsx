@@ -1,5 +1,12 @@
 import m from 'mithril';
-import { Button, Dialog, IconButton, TextField, MaterialDesignSpinner as Spinner } from 'polythene-mithril';
+import {
+  Button,
+  ButtonGroup,
+  Dialog,
+  IconButton,
+  TextField,
+  MaterialDesignSpinner as Spinner,
+} from 'polythene-mithril';
 import moment from 'moment';
 import { Breadcrumb, Container, DateRange, Modal } from '../../components';
 import { ChangePassword } from '../../modals';
@@ -19,7 +26,7 @@ class StyleGuide {
         <Dialog spawn="testing" header={<h1>Header</h1>} body={<p>Content</p>} footer={<p>Footer</p>} />
         <Container>
           <h1>Styles & Examples</h1>
-          <h3>Buttons</h3>
+          <h3>Button</h3>
           <Button
             raised
             label="Open Modal"
@@ -34,18 +41,49 @@ class StyleGuide {
               },
             }}
           />
-          <IconButton
-            raised
-            icon={{ svg: { content: m.trust(plusSVG) } }}
-            events={{
-              onclick: () => {
-                Toaster.success('Testing success');
-                Toaster.error('Testing error');
-                Toaster.warning('Testing warning');
-                Toaster.info('Testing info');
-              },
-            }}
-          />
+          <h3>Button Group</h3>
+          <ButtonGroup>
+            <Button
+              raised
+              className="button__green"
+              label="Success"
+              events={{
+                onclick: () => {
+                  Toaster.success('Success!');
+                },
+              }}
+            />
+            <Button
+              raised
+              className="button__red"
+              label="Error"
+              events={{
+                onclick: () => {
+                  Toaster.error('Error!');
+                },
+              }}
+            />
+            <Button
+              raised
+              className="button__yellow"
+              label="Warning"
+              events={{
+                onclick: () => {
+                  Toaster.warning('Warning!');
+                },
+              }}
+            />
+            <Button
+              raised
+              className="button__blue"
+              label="Info"
+              events={{
+                onclick: () => {
+                  Toaster.info('Info!');
+                },
+              }}
+            />
+          </ButtonGroup>
           <h3>Inputs</h3>
           <TextField placeholder="Placeholder"></TextField>
           <h3>Date Range</h3>
