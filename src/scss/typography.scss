@@ -42,9 +42,26 @@ body {
 }
 
 .font {
+  &-weight {
+    &--light {
+      @include light;
+    }
+    &--normal {
+      @include normal;
+    }
+    &--medium {
+      @include medium;
+    }
+    &--bold {
+      @include bold;
+    }
+  }
   &-color {
     &--light {
       color: $gray;
+    }
+    &--green {
+      color: $green;
     }
   }
   &-size {

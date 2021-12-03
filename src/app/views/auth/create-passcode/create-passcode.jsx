@@ -8,6 +8,9 @@ const iconCloseSVG =
 
 class CreatePasscode {
   constructor() {
+    this.passcode = 'OG8jvw9bTmUd5J92iKYmfU';
+    this.copied = false;
+
     this.savePassModalOptions = {
       backdrop: true,
       header: (
@@ -55,6 +58,30 @@ class CreatePasscode {
     };
   }
 
+  copyPasscode() {
+    this.copied = false;
+    navigator.clipboard.writeText(this.passcode).then(
+      () => {
+        this.copied = true;
+        m.redraw();
+      },
+      () => {
+        this.copied = false;
+        m.redraw();
+      }
+    );
+  }
+
+  generateNewPasscode() {
+    this.copied = false;
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 22; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    this.passcode = result;
+  }
+
   view() {
     return (
       <>
@@ -70,12 +97,26 @@ class CreatePasscode {
               and in a safe deposit box.
             </p>
             <div class="passcodeInput">
-              <div class="passcode">
-                <span>OG8jvw9bTmUd5J92iKYmfU</span>
+              <div
+                class="passcode"
+                onclick={() => {
+                  this.copyPasscode();
+                }}
+              >
+                <span>{this.passcode}</span>
                 <i class="fas fa-copy"></i>
               </div>
-              <Button raised label="Generate New" />
+              <Button
+                raised
+                label="Generate New"
+                events={{
+                  onclick: () => {
+                    this.generateNewPasscode();
+                  },
+                }}
+              />
             </div>
+            {this.copied ? <p class="font-color--green font-weight--medium">Passcode is copied!</p> : null}
             <div class="flex flex-justify-between" style={{ marginTop: '2rem' }}>
               <Button label="Use 1Password" />
               <Button label="Use Last Pass" />
