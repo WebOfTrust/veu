@@ -2,7 +2,7 @@ import m from 'mithril';
 import { Button, TextField } from 'polythene-mithril';
 import { Container } from '../../../components';
 
-class CreatePasscode {
+class EnterPasscode {
   constructor() {}
 
   view() {
@@ -36,4 +36,4 @@ class CreatePasscode {
   }
 }
 
-module.exports = CreatePasscode;
+module.exports = EnterPasscode;

@@ -1,6 +1,6 @@
 name: veu
 
-on: [ push ]
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -10,5 +10,5 @@ jobs:
         with:
           node-version: '14'
           cache: 'yarn'
-      - run: yarn install
-      - run: yarn test
+      - run: npm install
+      - run: npm test
