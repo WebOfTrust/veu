@@ -8,26 +8,28 @@ class ConfigureIdentifier {
   view() {
     return (
       <>
-        <Container class="headspace">
-          <div>
+        <Container class="headspace flex flex-align-center">
+          <div class="flex-2">
             <img src="https://via.placeholder.com/540x440" />
           </div>
-          <div>
+          <div class="flex-3" style="padding: 1rem">
             <h1>Create Your Alias</h1>
             <label>What would you like your alias to be?</label>
             <TextField placeholder="Jane Smith - QVI Corp." />
             <label>Witnesses</label>
             <TextField placeholder="GLEIF Witness Network" />
-            <Button
-              raised
-              className="button__blue"
-              label="Continue"
-              events={{
-                onclick: () => {
-                  m.route.set('/');
-                },
-              }}
-            />
+            <div class="flex flex-justify-end" style={{ marginTop: '2rem' }}>
+              <Button
+                raised
+                className="button__blue"
+                label="Continue"
+                events={{
+                  onclick: () => {
+                    m.route.set('/');
+                  },
+                }}
+              />
+            </div>
           </div>
         </Container>
       </>

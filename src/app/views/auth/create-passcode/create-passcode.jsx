@@ -28,12 +28,12 @@ class CreatePasscode {
         </Toolbar>
       ),
       body: (
-        <div class="flex">
+        <>
           <img style={{ marginRight: '1rem' }} src="https://via.placeholder.com/172x208" />
           <h3 class="font-color--light">
             If you forget your passcode, you lose access to your wallet. Make sure that you store it someplace safe.
           </h3>
-        </div>
+        </>
       ),
       footerButtons: (
         <>

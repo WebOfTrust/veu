@@ -3,7 +3,14 @@ import { Button, TextField } from 'polythene-mithril';
 import { Container } from '../../../components';
 
 class EnterPasscode {
-  constructor() {}
+  constructor() {
+    this.passcode = '';
+  }
+
+  continueDisabled() {
+    let passcodeValid = /^[a-zA-Z0-9]{22}$/.test(this.passcode);
+    return !passcodeValid;
+  }
 
   view() {
     return (
@@ -19,6 +26,11 @@ class EnterPasscode {
               Deposit Box) and entering it into the box below.
             </p>
             <TextField
+              events={{
+                oninput: (e) => {
+                  this.passcode = e.target.value;
+                },
+              }}
               placeholder="xxxxx-xxxx-xxxxx-xxxx-xxxx"
               validate={(val) => {
                 return /^[a-zA-Z0-9]{22}$/.test(val)
@@ -34,6 +46,7 @@ class EnterPasscode {
                 raised
                 className="button__blue"
                 label="Continue"
+                disabled={this.continueDisabled()}
                 events={{
                   onclick: () => {
                     m.route.set('/auth/configure-identifier');
