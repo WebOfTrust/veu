@@ -2,6 +2,8 @@
 
 vLEI Ecosystem User Interface
 
+![veu tests](https://github.com/WebOfTrust/veu/actions/workflows/test.yaml/badge.svg)
+
 ### Install
 
 ```bash
