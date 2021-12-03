@@ -8,8 +8,9 @@ const iconCloseSVG =
 
 class CreatePasscode {
   constructor() {
-    this.passcode = 'OG8jvw9bTmUd5J92iKYmfU';
+    this.passcode = '';
     this.copied = false;
+    this.generateNewPasscode();
 
     this.savePassModalOptions = {
       backdrop: true,
