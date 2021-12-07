@@ -39,6 +39,14 @@ class Tutorial {
   }
 
   oninit() {
+    this.startTimer();
+  }
+
+  onremove() {
+    this.stopTimer();
+  }
+
+  startTimer() {
     this.interval = setInterval(() => {
       if (this.stepSelectedIdx >= 3) {
         this.stepSelectedIdx = 0;
@@ -48,6 +56,10 @@ class Tutorial {
       this.stepSelected = this.steps[this.stepSelectedIdx];
       m.redraw();
     }, 1000 * this.secondsPerStep);
+  }
+
+  stopTimer() {
+    clearInterval(this.interval);
   }
 
   view() {
@@ -72,6 +84,9 @@ class Tutorial {
                   selectedChange={(idx) => {
                     this.stepSelectedIdx = idx;
                     this.stepSelected = this.steps[this.stepSelectedIdx];
+                    // Restart the timer
+                    this.stopTimer();
+                    this.startTimer();
                   }}
                   style={{ marginBottom: '1rem' }}
                 ></Steps>
