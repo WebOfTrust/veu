@@ -1,6 +1,7 @@
 import m from 'mithril';
 import { Button, TextField } from 'polythene-mithril';
 import { Container } from '../../../components';
+import configureIdentifier from '../../../../assets/img/configure-identifier.png';
 
 class ConfigureIdentifier {
   constructor() {}
@@ -10,7 +11,7 @@ class ConfigureIdentifier {
       <>
         <Container class="headspace flex flex-align-center">
           <div class="flex-2">
-            <img src="https://via.placeholder.com/540x440" />
+            <img src={configureIdentifier} />
           </div>
           <div class="flex-3" style="padding: 1rem">
             <h1>Create Your Alias</h1>

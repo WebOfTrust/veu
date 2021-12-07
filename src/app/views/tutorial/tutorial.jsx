@@ -2,32 +2,36 @@ import { Button } from 'polythene-mithril';
 import { Container } from '../../components';
 import Steps from './steps.jsx';
 import './tutorial.scss';
+import addNewContacts from '../../../assets/img/add-new-contacts.png';
+import configureIdentifier from '../../../assets/img/configure-identifier.png';
+import createYourPasscode from '../../../assets/img/create-your-passcode.png';
+import requestCredentials from '../../../assets/img/request-credentials.png';
 
 import m from 'mithril';
 
 class Tutorial {
   constructor() {
-    this.secondsPerStep = 10;
+    this.secondsPerStep = 5;
     this.steps = [
       {
         header: `Create Your Passcode`,
         subheader: `Utilizing 1Password, Last Pass or our passcode generator, create and store a 22 character passcode.`,
-        image: 'https://via.placeholder.com/540x440?text=Create+Your+Passcode',
+        image: createYourPasscode,
       },
       {
         header: `Secure Your Software`,
         subheader: `Create an identifier that is yours going forward that you can utilize to connect with and verify others.`,
-        image: 'https://via.placeholder.com/540x440?text=Secure+Your+Software',
+        image: configureIdentifier,
       },
       {
         header: `Add New Contacts`,
         subheader: `Add new contacts after obtaining their contact card. Verify your contacts over a short zoom call.`,
-        image: 'https://via.placeholder.com/540x440?text=Add+New+Contacts',
+        image: addNewContacts,
       },
       {
         header: `Request Credentials`,
         subheader: `After diligence has been completed, you can provide your contact card to request new credentials.`,
-        image: 'https://via.placeholder.com/540x440?text=Request+Credentials',
+        image: requestCredentials,
       },
     ];
     this.stepSelectedIdx = 0;

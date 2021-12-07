@@ -1,10 +1,7 @@
 import m from 'mithril';
-import { IconButton } from 'polythene-mithril';
+import IconButton from '../icon-button/icon-button.jsx';
 import moment from 'moment';
 import './date-picker.scss';
-
-const leftSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>`;
-const rightSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>`;
 
 class DatePicker {
   constructor() {
@@ -113,20 +110,16 @@ class DatePicker {
       <div class="datePicker">
         <div class="datePicker__navigation">
           <IconButton
-            icon={{ svg: { content: m.trust(rightSVG) } }}
-            events={{
-              onclick: () => {
-                this.back();
-              },
+            icon="chevron_left"
+            onclick={() => {
+              this.back();
             }}
           />
           <div class="datePicker__navigation__month">{this.formatHeader()}</div>
           <IconButton
-            icon={{ svg: { content: m.trust(leftSVG) } }}
-            events={{
-              onclick: () => {
-                this.forward();
-              },
+            icon="chevron_right"
+            onclick={() => {
+              this.forward();
             }}
           />
         </div>

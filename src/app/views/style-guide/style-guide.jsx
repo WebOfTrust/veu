@@ -1,14 +1,7 @@
 import m from 'mithril';
-import {
-  Button,
-  ButtonGroup,
-  Dialog,
-  IconButton,
-  TextField,
-  MaterialDesignSpinner as Spinner,
-} from 'polythene-mithril';
+import { TextField, MaterialDesignSpinner as Spinner } from 'polythene-mithril';
 import moment from 'moment';
-import { Breadcrumb, Container, DateRange, Modal } from '../../components';
+import { Button, Breadcrumb, Container, DateRange, Modal } from '../../components';
 import { ChangePassword } from '../../modals';
 import { Toaster } from '../../services';
 
@@ -16,6 +9,7 @@ const plusSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
 
 class StyleGuide {
   constructor() {
+    this.modalOpen = false;
     this.dateRangeStart = moment();
     this.dateRangeEnd = moment();
   }
@@ -23,67 +17,60 @@ class StyleGuide {
   view() {
     return (
       <>
-        <Dialog spawn="testing" header={<h1>Header</h1>} body={<p>Content</p>} footer={<p>Footer</p>} />
+        <Modal
+          isOpen={this.modalOpen}
+          onClose={() => {
+            this.modalOpen = false;
+          }}
+          header={<h1>Header</h1>}
+          content={<p>Content</p>}
+          footer={<p>Footer</p>}
+        />
         <Container>
           <h1>Styles & Examples</h1>
           <h3>Button</h3>
           <Button
+            ripple
             raised
+            iconTrailing={'settings'}
             label="Open Modal"
-            events={{
-              onclick: () => {
-                Dialog.show(
-                  {
-                    backdrop: true,
-                  },
-                  { spawn: 'testing' }
-                );
-              },
+            onclick={() => {
+              this.modalOpen = true;
             }}
           />
           <h3>Button Group</h3>
-          <ButtonGroup>
-            <Button
-              raised
-              className="button__green"
-              label="Success"
-              events={{
-                onclick: () => {
-                  Toaster.success('Success!');
-                },
-              }}
-            />
-            <Button
-              raised
-              className="button__red"
-              label="Error"
-              events={{
-                onclick: () => {
-                  Toaster.error('Error!');
-                },
-              }}
-            />
-            <Button
-              raised
-              className="button__yellow"
-              label="Warning"
-              events={{
-                onclick: () => {
-                  Toaster.warning('Warning!');
-                },
-              }}
-            />
-            <Button
-              raised
-              className="button__blue"
-              label="Info"
-              events={{
-                onclick: () => {
-                  Toaster.info('Info!');
-                },
-              }}
-            />
-          </ButtonGroup>
+          <Button
+            ripple
+            raised
+            label="Success"
+            onclick={() => {
+              Toaster.success('Success!');
+            }}
+          />
+          <Button
+            ripple
+            raised
+            label="Error"
+            onclick={() => {
+              Toaster.error('Error!');
+            }}
+          />
+          <Button
+            ripple
+            raised
+            label="Warning"
+            onclick={() => {
+              Toaster.warning('Warning!');
+            }}
+          />
+          <Button
+            ripple
+            raised
+            label="Info"
+            onclick={() => {
+              Toaster.info('Info!');
+            }}
+          />
           <h3>Inputs</h3>
           <TextField placeholder="Placeholder"></TextField>
           <h3>Date Range</h3>

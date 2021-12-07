@@ -111,7 +111,9 @@ class DateRange {
                 this.openDatePicker();
               }}
             >
-              <i class="fa fa-calendar-alt fa-fw"></i>
+              <span class="material-icons" style={{ marginRight: '.25rem' }}>
+                calendar_today
+              </span>
               <span>
                 {vnode.attrs.startDate.format('MMM D, y')} - {vnode.attrs.endDate.format('MMM D, y')}
               </span>
@@ -150,7 +152,7 @@ class DateRange {
               }}
             >
               <div class="segment__selected">{this.selectedRange(vnode)}</div>
-              <i class="fa fa-angle-down fa-fw"></i>
+              <span class="material-icons">arrow_drop_down</span>
             </div>
             <Popover
               style={{

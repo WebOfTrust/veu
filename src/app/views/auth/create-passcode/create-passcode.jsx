@@ -2,6 +2,8 @@ import m from 'mithril';
 import { Button, Dialog, IconButton, TextField, Toolbar, ToolbarTitle } from 'polythene-mithril';
 import { Container } from '../../../components';
 import './create-passcode.scss';
+import createYourPasscode from '../../../../assets/img/create-your-passcode.png';
+import wait from '../../../../assets/img/wait.png';
 
 const iconCloseSVG =
   '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>';
@@ -29,7 +31,7 @@ class CreatePasscode {
       ),
       body: (
         <>
-          <img style={{ marginRight: '1rem' }} src="https://via.placeholder.com/172x208" />
+          <img style={{ marginRight: '1rem' }} src={wait} />
           <h3 class="font-color--light">
             If you forget your passcode, you lose access to your wallet. Make sure that you store it someplace safe.
           </h3>
@@ -88,7 +90,7 @@ class CreatePasscode {
       <>
         <Container class="headspace flex flex-align-center">
           <div class="flex-2">
-            <img src="https://via.placeholder.com/540x440" />
+            <img src={createYourPasscode} />
           </div>
           <div class="flex-3" style="padding: 1rem">
             <h1>Create a Passcode</h1>

@@ -1,5 +1,4 @@
 import m from 'mithril';
-import { Button } from 'polythene-mithril';
 import Container from '../container/container.jsx';
 import './nav.scss';
 
@@ -21,14 +20,6 @@ class Nav {
               </m.route.Link>
             </h2>
             <div class="nav__spacer"></div>
-            {/*<Button
-              label="Start now"
-              events={{
-                onclick: () => {
-                  m.route.set('/start-now');
-                },
-              }}
-            />*/}
           </div>
         </Container>
       </div>

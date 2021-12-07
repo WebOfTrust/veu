@@ -1,6 +1,7 @@
 import m from 'mithril';
 import { Button, TextField } from 'polythene-mithril';
 import { Container } from '../../../components';
+import passcodeImg from '../../../../assets/img/passcode.png';
 
 class EnterPasscode {
   constructor() {
@@ -17,7 +18,7 @@ class EnterPasscode {
       <>
         <Container class="headspace flex flex-align-center">
           <div class="flex-2">
-            <img src="https://via.placeholder.com/540x440" />
+            <img src={passcodeImg} />
           </div>
           <div class="flex-3" style="padding: 1rem">
             <h1>Please enter your passcode.</h1>
