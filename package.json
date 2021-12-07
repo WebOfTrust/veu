@@ -13,6 +13,7 @@
     "nuke": "rm -rf .parcel-cache/ dist/ node_modules/; rm package-lock.json"
   },
   "dependencies": {
+    "material-components-web": "^13.0.0",
     "mithril": "^2.0.4",
     "moment": "^2.29.1",
     "polythene-css": "^1.7.5",
