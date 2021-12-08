@@ -1,12 +1,8 @@
 /* DEFAULTS (imported into app.js)
 ---------------------------------------- */
-@use '@material/theme/index' with (
-  $primary: #3c64b1
-);
-@use '@material/button/mdc-button';
-@use '@material/icon-button/mdc-icon-button';
 @import 'mixins';
 @import 'variables';
+@import 'material';
 
 body {
   margin: 0;
@@ -16,19 +12,6 @@ body {
 
 * {
   box-sizing: border-box;
-}
-
-.material-icons.md-18 {
-  font-size: 18px;
-}
-.material-icons.md-24 {
-  font-size: 24px;
-}
-.material-icons.md-36 {
-  font-size: 36px;
-}
-.material-icons.md-48 {
-  font-size: 48px;
 }
 
 // remove default styling for ul

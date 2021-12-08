@@ -7,6 +7,9 @@ import IconButton from './icon-button/icon-button.jsx';
 import Modal from './modal/modal.jsx';
 import Nav from './nav/nav.jsx';
 import Popover from './popover/popover.jsx';
+import Spinner from './spinner/spinner.jsx';
+import Steps from './steps/steps.jsx';
+import TextField from './text-field/text-field.jsx';
 import ToastOutlet from './toast-outlet/toast-outlet.jsx';
 
 module.exports = {
@@ -19,5 +22,8 @@ module.exports = {
   Modal,
   Nav,
   Popover,
+  Spinner,
+  Steps,
+  TextField,
   ToastOutlet,
 };

@@ -12,24 +12,6 @@ body {
   font-size: 100%; // 16px in most browsers.
 }
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6,
-// p {
-//   margin: 0 0 1em;
-// }
-
-// h5 {
-//   @include normal;
-// }
-//
-// h6 {
-//   @include normal;
-// }
-
 .error {
   @include bold;
   color: $red;
@@ -58,7 +40,7 @@ body {
   }
   &-color {
     &--light {
-      color: $gray;
+      color: $light-text;
     }
     &--green {
       color: $green;

@@ -1,0 +1,46 @@
+// Theme
+@use '@material/theme/index' with (
+  $primary: $blue
+);
+
+// Buttons/IconButtons
+@use '@material/button/styles' as buttonStyles;
+@use '@material/button/index' as button;
+@use '@material/icon-button/styles' as iconButtonStyles;
+
+// TextFields
+@use '@material/floating-label/mdc-floating-label';
+@use '@material/line-ripple/mdc-line-ripple';
+@use '@material/notched-outline/mdc-notched-outline';
+@use '@material/textfield/mixins' as textfield;
+
+// Circular Progress
+@use '@material/circular-progress/mdc-circular-progress';
+
+@include textfield.core-styles;
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.button {
+  &__gray {
+    @include button.ink-color($default-text);
+    @include button.icon-color($default-text);
+    @include button.container-fill-color($gray-lter);
+    @include button.outline-color($gray-lter);
+  }
+
+  &__big {
+    @include button.height('3.5rem');
+  }
+}
