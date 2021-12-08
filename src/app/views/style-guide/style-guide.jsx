@@ -1,6 +1,6 @@
 import m from 'mithril';
 import moment from 'moment';
-import { Button, Breadcrumb, Container, DateRange, Modal, Spinner, TextField } from '../../components';
+import { Button, Breadcrumb, Container, DateRange, IconButton, Modal, Spinner, TextField } from '../../components';
 import { ChangePassword } from '../../modals';
 import { Toaster } from '../../services';
 
@@ -29,51 +29,26 @@ class StyleGuide {
         />
         <Container>
           <h1 class="headspace">Styles & Examples</h1>
-          <h3>Button</h3>
+          <h3>Buttons</h3>
+          <Button label="Text" />
+          <Button outlined label="Outlined" />
+          <Button raised label="Raised" />
+          <Button raised iconLeading="search" label="Icon Leading" />
+          <Button raised iconTrailing="search" label="Icon Trailing" />
+          <Button ripple={false} raised label="No Ripple" />
+          <h3>Icon Buttons</h3>
+          <IconButton icon="search" />
+          <IconButton icon="visibility" ripple={false} />
+          <h3>Inputs</h3>
+          <TextField placeholder="Placeholder"></TextField>
+          <h3>Modal</h3>
           <Button
-            ripple
             raised
-            iconTrailing={'settings'}
             label="Open Modal"
             onclick={() => {
               this.modalOpen = true;
             }}
           />
-          <h3>Button Group</h3>
-          <Button
-            ripple
-            raised
-            label="Success"
-            onclick={() => {
-              Toaster.success('Success!');
-            }}
-          />
-          <Button
-            ripple
-            raised
-            label="Error"
-            onclick={() => {
-              Toaster.error('Error!');
-            }}
-          />
-          <Button
-            ripple
-            raised
-            label="Warning"
-            onclick={() => {
-              Toaster.warning('Warning!');
-            }}
-          />
-          <Button
-            ripple
-            raised
-            label="Info"
-            onclick={() => {
-              Toaster.info('Info!');
-            }}
-          />
-          <h3>Inputs</h3>
-          <TextField placeholder="Placeholder"></TextField>
           <h3>Date Range</h3>
           <DateRange
             startDate={this.dateRangeStart}
