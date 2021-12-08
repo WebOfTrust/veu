@@ -1,6 +1,11 @@
 // Theme
 @use '@material/theme/index' with (
-  $primary: $blue
+  $primary: $blue,
+  $on-primary: #ffffff
+);
+
+@use '@material/typography/index' as typography with (
+  $font-family: unquote('Mulish, Helvetica, Arial, sans-serif')
 );
 
 // Button
@@ -16,6 +21,12 @@
 @use '@material/line-ripple/mdc-line-ripple';
 @use '@material/notched-outline/mdc-notched-outline';
 @use '@material/textfield/mixins' as textfield;
+
+// Select
+@use '@material/list/mdc-list';
+@use '@material/menu-surface/mdc-menu-surface';
+@use '@material/menu/mdc-menu';
+@use '@material/select/styles';
 
 // CircularProgress
 @use '@material/circular-progress/mdc-circular-progress';

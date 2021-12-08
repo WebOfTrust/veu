@@ -2,11 +2,11 @@
 ---------------------------------------- */
 // App-specific Typography
 @mixin sans {
-  font-family: 'Mulish', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Mulish', Helvetica, Arial, sans-serif;
 }
 
 @mixin lato {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
 
 @mixin light {

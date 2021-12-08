@@ -7,6 +7,7 @@ import IconButton from './icon-button/icon-button.jsx';
 import Modal from './modal/modal.jsx';
 import Nav from './nav/nav.jsx';
 import Popover from './popover/popover.jsx';
+import Select from './select/select.jsx';
 import Spinner from './spinner/spinner.jsx';
 import Steps from './steps/steps.jsx';
 import TextField from './text-field/text-field.jsx';
@@ -22,6 +23,7 @@ module.exports = {
   Modal,
   Nav,
   Popover,
+  Select,
   Spinner,
   Steps,
   TextField,
