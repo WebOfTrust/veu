@@ -11,14 +11,16 @@ function uuidv4() {
 class Button {
   constructor() {
     this.randomId = 'u' + uuidv4().substring(0, 8);
-    this.buttonClass = `${this.randomId} mdc-button`;
+    this.buttonClass = `mdc-button`;
     this.optionDefaults = {
       outlined: false,
       raised: false,
       ripple: true,
+      class: null,
       label: '',
       iconLeading: null,
       iconTrailing: null,
+      disabled: false,
       onclick: null,
     };
     this.options = null;
@@ -26,15 +28,21 @@ class Button {
   }
 
   oninit(vnode) {
-    this.options = Object.assign({}, this.optionDefaults, {
-      outlined: vnode.attrs.outlined,
-      raised: vnode.attrs.raised,
-      ripple: vnode.attrs.ripple,
-      label: vnode.attrs.label,
-      iconLeading: vnode.attrs.iconLeading,
-      iconTrailing: vnode.attrs.iconTrailing,
-      onclick: vnode.attrs.onclick,
-    });
+    this.update(vnode);
+  }
+
+  oncreate(vnode) {
+    if (this.options.ripple) {
+      this.mdcRipple = new MDCRipple(document.querySelector(`#${this.randomId}`));
+    }
+  }
+
+  onupdate(vnode) {
+    this.update(vnode);
+  }
+
+  update(vnode) {
+    this.options = Object.assign({}, this.optionDefaults, vnode.attrs);
     if (this.options.raised) {
       this.buttonClass += ' mdc-button--raised';
     }
@@ -47,17 +55,19 @@ class Button {
     if (this.options.iconTrailing) {
       this.buttonClass += ' mdc-button--icon-trailing';
     }
-  }
-
-  oncreate(vnode) {
-    if (this.options.ripple) {
-      this.mdcRipple = new MDCRipple(document.querySelector(`#${this.randomId}`));
+    if (this.options.class) {
+      this.buttonClass += ` ${this.options.class}`;
     }
   }
 
   view(vnode) {
     return (
-      <button id={this.randomId} class={this.buttonClass} onclick={this.options.onclick}>
+      <button
+        id={this.randomId}
+        class={this.buttonClass}
+        disabled={this.options.disabled}
+        onclick={this.options.onclick}
+      >
         <div class="mdc-button__ripple"></div>
         {this.options.iconLeading && (
           <div class="mdc-button__icon">
