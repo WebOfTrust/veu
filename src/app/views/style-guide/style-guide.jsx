@@ -1,11 +1,8 @@
 import m from 'mithril';
-import { TextField, MaterialDesignSpinner as Spinner } from 'polythene-mithril';
 import moment from 'moment';
-import { Button, Breadcrumb, Container, DateRange, Modal } from '../../components';
+import { Button, Breadcrumb, Container, DateRange, Modal, Spinner, TextField } from '../../components';
 import { ChangePassword } from '../../modals';
 import { Toaster } from '../../services';
-
-const plusSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>`;
 
 class StyleGuide {
   constructor() {
@@ -96,7 +93,7 @@ class StyleGuide {
             ]}
           />
           <h3>Spinner</h3>
-          <Spinner show></Spinner>
+          <Spinner />
           <h3>Typography</h3>
           <h1>h1</h1>
           <h2>h2</h2>

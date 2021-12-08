@@ -1,6 +1,5 @@
 import m from 'mithril';
-import { Button, TextField } from 'polythene-mithril';
-import { Container } from '../../../components';
+import { Button, Container, TextField } from '../../../components';
 import configureIdentifier from '../../../../assets/img/configure-identifier.png';
 
 class ConfigureIdentifier {
@@ -22,12 +21,9 @@ class ConfigureIdentifier {
             <div class="flex flex-justify-end" style={{ marginTop: '2rem' }}>
               <Button
                 raised
-                className="button__blue"
                 label="Continue"
-                events={{
-                  onclick: () => {
-                    m.route.set('/');
-                  },
+                onclick={() => {
+                  m.route.set('/');
                 }}
               />
             </div>

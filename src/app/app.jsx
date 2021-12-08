@@ -2,9 +2,7 @@ import m from 'mithril';
 
 import { Nav, ToastOutlet } from './components';
 import { ConfigureIdentifier, CreatePasscode, EnterPasscode, Error, StyleGuide, Tutorial } from './views';
-import './button-styles.jsx';
 
-import 'polythene-css';
 import '../scss/defaults.scss';
 import '../scss/typography.scss';
 import '../scss/globals.scss';

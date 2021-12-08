@@ -1,64 +1,15 @@
 import m from 'mithril';
-import { Button, Dialog, IconButton, TextField, Toolbar, ToolbarTitle } from 'polythene-mithril';
-import { Container } from '../../../components';
+import { Button, Container, IconButton, Modal } from '../../../components';
 import './create-passcode.scss';
 import createYourPasscode from '../../../../assets/img/create-your-passcode.png';
 import wait from '../../../../assets/img/wait.png';
-
-const iconCloseSVG =
-  '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>';
 
 class CreatePasscode {
   constructor() {
     this.passcode = '';
     this.copied = false;
+    this.savePassModalOpen = false;
     this.generateNewPasscode();
-
-    this.savePassModalOptions = {
-      backdrop: true,
-      header: (
-        <Toolbar border>
-          <ToolbarTitle>Wait! Did you save your passcode?</ToolbarTitle>
-          <IconButton
-            icon={{ svg: { content: m.trust(iconCloseSVG) } }}
-            events={{
-              onclick: () => {
-                Dialog.hide();
-              },
-            }}
-          />
-        </Toolbar>
-      ),
-      body: (
-        <>
-          <img style={{ marginRight: '1rem' }} src={wait} />
-          <h3 class="font-color--light">
-            If you forget your passcode, you lose access to your wallet. Make sure that you store it someplace safe.
-          </h3>
-        </>
-      ),
-      footerButtons: (
-        <>
-          <Button
-            label="Cancel"
-            events={{
-              onclick: () => {
-                Dialog.hide();
-              },
-            }}
-          />
-          <Button
-            label="I Saved My Passcode"
-            events={{
-              onclick: () => {
-                m.route.set('/auth/enter-passcode');
-                Dialog.hide();
-              },
-            }}
-          />
-        </>
-      ),
-    };
   }
 
   copyPasscode() {
@@ -88,6 +39,40 @@ class CreatePasscode {
   view() {
     return (
       <>
+        <Modal
+          isOpen={this.savePassModalOpen}
+          onClose={() => {
+            this.savePassModalOpen = false;
+          }}
+          style={{ width: '680px' }}
+          header={<h1>Wait! Did you save your passcode?</h1>}
+          content={
+            <>
+              <div class="flex flex-align-center flex-justify-center">
+                <img style={{ marginRight: '2rem' }} src={wait} />
+                <h3 class="font-color--light" style={{ maxWidth: '280px' }}>
+                  If you forget your passcode, you lose access to your wallet. Make sure that you store it someplace
+                  safe.
+                </h3>
+              </div>
+            </>
+          }
+          footer={
+            <>
+              <div class="flex flex-justify-center" style={{ marginTop: '2rem' }}>
+                <Button
+                  raised
+                  class="button__big"
+                  label="I Saved My Passcode"
+                  onclick={() => {
+                    this.savePassModalOpen = false;
+                    m.route.set('/auth/enter-passcode');
+                  }}
+                />
+              </div>
+            </>
+          }
+        />
         <Container class="headspace flex flex-align-center">
           <div class="flex-2">
             <img src={createYourPasscode} />
@@ -111,34 +96,30 @@ class CreatePasscode {
               </div>
               <Button
                 raised
+                ripple
+                class="button__gray"
                 label="Generate New"
-                events={{
-                  onclick: () => {
-                    this.generateNewPasscode();
-                  },
+                onclick={() => {
+                  this.generateNewPasscode();
                 }}
               />
             </div>
             {this.copied ? <p class="font-color--green font-weight--medium">Passcode is copied!</p> : null}
-            <div class="flex flex-justify-between" style={{ marginTop: '2rem' }}>
+            {/*<div class="flex flex-justify-between" style={{ marginTop: '2rem' }}>
               <Button label="Use 1Password" />
               <Button label="Use Last Pass" />
-            </div>
+            </div>*/}
             <div class="flex flex-justify-end" style={{ marginTop: '2rem' }}>
               <Button
                 raised
-                className="button__blue"
                 label="Continue"
-                events={{
-                  onclick: () => {
-                    Dialog.show(this.savePassModalOptions);
-                  },
+                onclick={() => {
+                  this.savePassModalOpen = true;
                 }}
               />
             </div>
           </div>
         </Container>
-        <Dialog />
       </>
     );
   }

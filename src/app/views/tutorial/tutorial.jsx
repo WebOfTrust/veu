@@ -1,6 +1,4 @@
-import { Button } from 'polythene-mithril';
-import { Container } from '../../components';
-import Steps from './steps.jsx';
+import { Button, Container, Steps } from '../../components';
 import './tutorial.scss';
 import addNewContacts from '../../../assets/img/add-new-contacts.png';
 import configureIdentifier from '../../../assets/img/configure-identifier.png';
@@ -66,9 +64,9 @@ class Tutorial {
     return (
       <>
         <Container>
-          <div class="headspace">
-            <h1 class="text--center">Welcome to the vLEI Ecosystem</h1>
-            <p class="text--center font-color--light">
+          <div class="headspace text--center">
+            <h1>Welcome to the vLEI Ecosystem</h1>
+            <p class="font-color--light">
               Getting started is easy, after the sign-up process, you can add and verify connections, request your own
               credentials and store contact information for later use.
             </p>
@@ -76,8 +74,8 @@ class Tutorial {
           {this.stepSelected && (
             <div class="headspace tutorial">
               <div class="tutorial__info">
-                <h1 class="tutorial__header">{this.stepSelected.header}</h1>
-                <h3 class="tutorial__subheader font-color--light">{this.stepSelected.subheader}</h3>
+                <h1>{this.stepSelected.header}</h1>
+                <h3 class="font-color--light">{this.stepSelected.subheader}</h3>
                 <Steps
                   count={this.steps.length}
                   selected={this.stepSelectedIdx}
@@ -91,13 +89,11 @@ class Tutorial {
                   style={{ marginBottom: '1rem' }}
                 ></Steps>
                 <Button
+                  ripple
                   raised
-                  className="button__blue"
                   label="Get Started"
-                  events={{
-                    onclick: () => {
-                      m.route.set('/auth/create-passcode');
-                    },
+                  onclick={() => {
+                    m.route.set('/auth/create-passcode');
                   }}
                 />
               </div>

@@ -1,6 +1,5 @@
 import m from 'mithril';
-import { Button, TextField } from 'polythene-mithril';
-import { Container } from '../../../components';
+import { Button, Container, TextField } from '../../../components';
 import passcodeImg from '../../../../assets/img/passcode.png';
 
 class EnterPasscode {
@@ -26,11 +25,9 @@ class EnterPasscode {
               You can find your 22-character passcode by referring back to your storage spot (1Password, Last Pass, Safe
               Deposit Box) and entering it into the box below.
             </p>
-            <TextField
-              events={{
-                oninput: (e) => {
-                  this.passcode = e.target.value;
-                },
+            {/*<TextField
+              oninput={(e) => {
+                this.passcode = e.target.value;
               }}
               placeholder="xxxxx-xxxx-xxxxx-xxxx-xxxx"
               validate={(val) => {
@@ -41,17 +38,27 @@ class EnterPasscode {
                       error: 'Passcode must have 22 characters, letters and numbers (no symbols)',
                     };
               }}
+            />*/}
+            <TextField
+              oninput={(e) => {
+                this.passcode = e.target.value;
+              }}
+              placeholder="xxxxx-xxxx-xxxxx-xxxx-xxxx"
             />
             <div class="flex flex-justify-end" style={{ marginTop: '2rem' }}>
-              <Button
+              {/*<Button
                 raised
-                className="button__blue"
                 label="Continue"
                 disabled={this.continueDisabled()}
-                events={{
-                  onclick: () => {
-                    m.route.set('/auth/configure-identifier');
-                  },
+                onclick={() => {
+                  m.route.set('/auth/configure-identifier');
+                }}
+              />*/}
+              <Button
+                raised
+                label="Continue"
+                onclick={() => {
+                  m.route.set('/auth/configure-identifier');
                 }}
               />
             </div>
