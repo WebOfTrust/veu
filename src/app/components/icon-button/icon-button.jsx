@@ -1,7 +1,6 @@
 import m from 'mithril';
 import { MDCRipple } from '@material/ripple';
 import { UUID } from '../../services';
-import './icon-button.scss';
 
 class IconButton {
   constructor() {
@@ -22,10 +21,10 @@ class IconButton {
   }
 
   oncreate(vnode) {
-    if (this.options.ripple) {
-      this.mdcRipple = new MDCRipple(document.querySelector(`#${this.randomId}`));
-      this.mdcRipple.unbounded = true;
-    }
+    // if (this.options.ripple) {
+    //   this.mdcRipple = new MDCRipple(document.getElementById(this.randomId));
+    //   this.mdcRipple.unbounded = true;
+    // }
   }
 
   view(vnode) {

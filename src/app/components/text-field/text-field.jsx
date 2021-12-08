@@ -1,17 +1,20 @@
 import m from 'mithril';
 import { MDCTextField } from '@material/textfield';
+import { UUID } from '../../services';
 
 class TextField {
-  constructor() {}
+  constructor() {
+    this.randomId = 'u' + UUID.uuidv4().substring(0, 8);
+  }
 
   oncreate() {
-    this.mdcInstance = new MDCTextField(document.querySelector('.mdc-text-field'));
+    // this.mdcInstance = new MDCTextField(document.getElementById(this.randomId));
   }
 
   view(vnode) {
     return (
       <>
-        <label class="mdc-text-field mdc-text-field--filled">
+        <label id={this.randomId} class="mdc-text-field mdc-text-field--filled">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id={vnode.attrs.labelId}>
             {vnode.attrs.label}
