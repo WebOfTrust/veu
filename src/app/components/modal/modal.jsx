@@ -35,19 +35,9 @@ class Modal {
                 }}
               />
             )}
-            {vnode.attrs.header && (
-              <div>
-                {vnode.attrs.header}
-                <div class="divider"></div>
-              </div>
-            )}
+            {vnode.attrs.header && <div>{vnode.attrs.header}</div>}
             <div>{vnode.attrs.content}</div>
-            {vnode.attrs.footer && (
-              <div>
-                <div class="divider"></div>
-                {vnode.attrs.footer}
-              </div>
-            )}
+            {vnode.attrs.footer && <div>{vnode.attrs.footer}</div>}
           </div>
         </div>
       )

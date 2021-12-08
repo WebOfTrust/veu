@@ -18,6 +18,10 @@ class StyleGuide {
     return (
       <>
         <Modal
+          style={{
+            animation: '0.4s slideInTop',
+            width: '320px',
+          }}
           isOpen={this.modalOpen}
           onClose={() => {
             this.modalOpen = false;
@@ -27,7 +31,7 @@ class StyleGuide {
           footer={<p>Footer</p>}
         />
         <Container>
-          <h1>Styles & Examples</h1>
+          <h1 class="headspace">Styles & Examples</h1>
           <h3>Button</h3>
           <Button
             ripple

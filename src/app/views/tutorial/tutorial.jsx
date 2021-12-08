@@ -15,7 +15,7 @@ class Tutorial {
     this.steps = [
       {
         header: `Create Your Passcode`,
-        subheader: `Utilizing 1Password, Last Pass or our passcode generator, create and store a 22 character passcode.`,
+        subheader: `Getting started is easy, first we need to secure your new software with a passcode. Then you can add and verify connections, request and receive credentials, and store contact information for later use.`,
         image: createYourPasscode,
       },
       {
