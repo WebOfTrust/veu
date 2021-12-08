@@ -28,12 +28,14 @@ class Modal {
             }}
           >
             {!vnode.attrs.closeDisabled && (
-              <IconButton
-                icon="close"
-                onclick={() => {
-                  this.close(vnode);
-                }}
-              />
+              <div class="modal__close">
+                <IconButton
+                  icon="close"
+                  onclick={() => {
+                    this.close(vnode);
+                  }}
+                />
+              </div>
             )}
             {vnode.attrs.header && <div>{vnode.attrs.header}</div>}
             <div>{vnode.attrs.content}</div>
