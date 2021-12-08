@@ -157,7 +157,7 @@ class DateRange {
             <Popover
               style={{
                 top: '48px',
-                width: '100px',
+                width: '150px',
               }}
               onClose={() => {
                 this.rangeDropdownVisible = false;
