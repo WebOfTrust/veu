@@ -51,7 +51,21 @@ class StyleGuide {
           <IconButton icon="search" />
           <IconButton icon="visibility" ripple={false} />
           <h3>Text Field</h3>
-          <TextField placeholder="Placeholder"></TextField>
+          <TextField filled label="Filled" placeholder="Placeholder" />
+          <TextField outlined label="Outlined" placeholder="Placeholder" />
+          <br />
+          <label>No Label</label>
+          <br />
+          <TextField filled placeholder="Placeholder" />
+          <TextField outlined placeholder="Placeholder" />
+          <br />
+          <label>Disabled</label>
+          <br />
+          <TextField filled disabled label="Filled" placeholder="Placeholder" />
+          <TextField outlined disabled label="Outlined" placeholder="Placeholder" />
+          <h3>Text Area</h3>
+          <TextField textarea filled placeholder="Placeholder" />
+          <TextField textarea outlined placeholder="Placeholder" />
           <h3>Select</h3>
           <Select />
           <h3>Modal</h3>

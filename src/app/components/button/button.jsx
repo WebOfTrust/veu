@@ -27,7 +27,9 @@ class Button {
 
   oncreate(vnode) {
     if (this.options.ripple) {
-      this.mdcRipple = new MDCRipple(document.getElementById(this.randomId));
+      try {
+        this.mdcRipple = new MDCRipple(document.getElementById(this.randomId));
+      } catch (e) {}
     }
   }
 

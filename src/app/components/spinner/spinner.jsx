@@ -8,7 +8,9 @@ class Spinner {
   }
 
   oncreate() {
-    this.mdcInstance = new MDCCircularProgress(document.getElementById(this.randomId));
+    try {
+      this.mdcInstance = new MDCCircularProgress(document.getElementById(this.randomId));
+    } catch (e) {}
   }
 
   view() {

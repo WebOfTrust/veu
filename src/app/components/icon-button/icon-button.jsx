@@ -22,8 +22,10 @@ class IconButton {
 
   oncreate(vnode) {
     if (this.options.ripple) {
-      this.mdcRipple = new MDCRipple(document.getElementById(this.randomId));
-      this.mdcRipple.unbounded = true;
+      try {
+        this.mdcRipple = new MDCRipple(document.getElementById(this.randomId));
+        this.mdcRipple.unbounded = true;
+      } catch (e) {}
     }
   }
 

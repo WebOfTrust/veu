@@ -7,10 +7,12 @@ class Select {
   }
 
   oncreate() {
-    this.select = new MDCSelect(document.querySelector('.mdc-select'));
-    this.select.listen('MDCSelect:change', () => {
-      // alert(`Selected option at index ${this.select.selectedIndex} with value "${this.select.value}"`);
-    });
+    try {
+      this.select = new MDCSelect(document.querySelector('.mdc-select'));
+      this.select.listen('MDCSelect:change', () => {
+        // alert(`Selected option at index ${this.select.selectedIndex} with value "${this.select.value}"`);
+      });
+    } catch (e) {}
   }
 
   view() {
