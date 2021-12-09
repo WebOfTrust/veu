@@ -62,7 +62,7 @@ class CreatePasscode {
               <div class="flex flex-justify-center" style={{ marginTop: '2rem' }}>
                 <Button
                   raised
-                  class="button__big"
+                  class="button__big button__extraPadding"
                   label="I Saved My Passcode"
                   onclick={() => {
                     this.savePassModalOpen = false;

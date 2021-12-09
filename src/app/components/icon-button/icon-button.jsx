@@ -21,10 +21,10 @@ class IconButton {
   }
 
   oncreate(vnode) {
-    // if (this.options.ripple) {
-    //   this.mdcRipple = new MDCRipple(document.getElementById(this.randomId));
-    //   this.mdcRipple.unbounded = true;
-    // }
+    if (this.options.ripple) {
+      this.mdcRipple = new MDCRipple(document.getElementById(this.randomId));
+      this.mdcRipple.unbounded = true;
+    }
   }
 
   view(vnode) {

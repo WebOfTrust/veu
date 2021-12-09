@@ -8,7 +8,7 @@ class TextField {
   }
 
   oncreate() {
-    // this.mdcInstance = new MDCTextField(document.getElementById(this.randomId));
+    this.mdcInstance = new MDCTextField(document.getElementById(this.randomId));
   }
 
   view(vnode) {
