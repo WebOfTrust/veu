@@ -13,7 +13,9 @@ class TextField {
       rows: 4,
       cols: 40,
       class: null,
+      style: null,
       label: null,
+      pattern: null,
       // iconLeading: null,
       // iconTrailing: null,
       disabled: false,
@@ -53,7 +55,7 @@ class TextField {
   view(vnode) {
     return (
       <>
-        <label id={this.randomId} class={this.textfieldClass}>
+        <label id={this.randomId} class={this.textfieldClass} style={this.options.style}>
           <span class="mdc-text-field__ripple"></span>
           {this.options.filled && this.options.label && !this.options.textarea && (
             <>
@@ -87,6 +89,8 @@ class TextField {
                 class="mdc-text-field__input"
                 rows={this.options.rows}
                 cols={this.options.cols}
+                placeholder={this.options.placeholder}
+                pattern={this.options.pattern}
                 disabled={this.options.disabled}
                 oninput={(e) => {
                   if (this.options.oninput) {
@@ -100,6 +104,7 @@ class TextField {
               class="mdc-text-field__input"
               type="text"
               placeholder={this.options.placeholder}
+              pattern={this.options.pattern}
               disabled={this.options.disabled}
               oninput={(e) => {
                 if (this.options.oninput) {

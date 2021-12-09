@@ -11,6 +11,7 @@ class Button {
       raised: false,
       ripple: true,
       class: null,
+      style: null,
       label: '',
       iconLeading: null,
       iconTrailing: null,
@@ -61,6 +62,7 @@ class Button {
       <button
         id={this.randomId}
         class={this.buttonClass}
+        style={this.options.style}
         disabled={this.options.disabled}
         onclick={this.options.onclick}
       >

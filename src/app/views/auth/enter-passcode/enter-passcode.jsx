@@ -25,38 +25,22 @@ class EnterPasscode {
               You can find your 22-character passcode by referring back to your storage spot (1Password, Last Pass, Safe
               Deposit Box) and entering it into the box below.
             </p>
-            {/*<TextField
-              oninput={(e) => {
-                this.passcode = e.target.value;
-              }}
-              placeholder="xxxxx-xxxx-xxxxx-xxxx-xxxx"
-              validate={(val) => {
-                return /^[a-zA-Z0-9]{22}$/.test(val)
-                  ? null
-                  : {
-                      valid: false,
-                      error: 'Passcode must have 22 characters, letters and numbers (no symbols)',
-                    };
-              }}
-            />*/}
-            <TextField
-              oninput={(e) => {
-                this.passcode = e.target.value;
-              }}
-              placeholder="xxxxx-xxxx-xxxxx-xxxx-xxxx"
-            />
-            <div class="flex flex-justify-end" style={{ marginTop: '2rem' }}>
-              {/*<Button
-                raised
-                label="Continue"
-                disabled={this.continueDisabled()}
-                onclick={() => {
-                  m.route.set('/auth/configure-identifier');
+            <div class="flex flex-align-center">
+              <TextField
+                filled
+                label="Passcode"
+                oninput={(e) => {
+                  this.passcode = e.target.value;
                 }}
-              />*/}
+                pattern={'^[a-zA-Z0-9]{22}$'}
+                placeholder="xxxxx-xxxx-xxxxx-xxxx-xxxx"
+              />
               <Button
                 raised
                 label="Continue"
+                style={{
+                  marginLeft: '1rem',
+                }}
                 onclick={() => {
                   m.route.set('/auth/configure-identifier');
                 }}
